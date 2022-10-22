@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<a href="/">back</a>
+{% for d in dd %}
+<p>
+    
+<p style="color: red;">Number: {{forloop.counter}} -> {{d.name}}</p>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{forloop.counter }}" aria-expanded="false" aria-controls="collapseExample">
+      Questions
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample{{forloop.counter}}">
+    <div class="card card-body">
+    <a href="https://codeforces.com/problemset/problem/{{d.id}}/A" target="_blank">Question A</a>
+    <a href="https://codeforces.com/problemset/problem/{{d.id}}/B" target="_blank">Question B</a>
+    <a href="https://codeforces.com/problemset/problem/{{d.id}}/C" target="_blank">Question C</a>
+
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock body %}
